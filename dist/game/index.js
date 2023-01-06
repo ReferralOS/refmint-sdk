@@ -19,13 +19,14 @@ class Game extends base_1.Base {
         };
         return this.getRequest(`/sdk/game/user-links`, params);
     }
-    click(custom_url, link_id) {
+    click(project_url, campaign_url, link_id) {
         var params = {
-            custom_url: custom_url
+            project_url: project_url,
+            campaign_url: campaign_url,
         };
         if (link_id)
             params.link_id = link_id;
-        return this.postRequest(`/sdk/game/click`, params);
+        return this.postRequest(`/sdk/game/campaign/click`, params);
     }
     //querying campaign information
     leaderboard(project_url, campaign_url, order_by, //order by: referrals and score

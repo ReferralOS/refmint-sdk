@@ -5,7 +5,7 @@ export declare class Game extends Base {
         referral_link: string;
         referral_id: string;
     }>;
-    click(custom_url: string, link_id?: string): Promise<void>;
+    click(project_url: string, campaign_url: string, link_id?: string): Promise<void>;
     leaderboard(project_url: string, campaign_url: string, order_by: string, //order by: referrals and score
     page_size: number, page: number, with_points_only: boolean): Promise<{
         wallet_address: string;

@@ -40,19 +40,22 @@ export class Game extends Base {
   }
 
   click(
-    custom_url: string,
+    project_url: string,
+    campaign_url: string,
     link_id?: string
   ): Promise<void> {
 
     var params:{
-      custom_url: string,
+      project_url: string,
+      campaign_url: string,
       link_id?: string
     } = { 
-      custom_url: custom_url
+      project_url: project_url,
+      campaign_url: campaign_url,
     }
     if (link_id) params.link_id = link_id
 
-    return this.postRequest(`/sdk/game/click`,params);
+    return this.postRequest(`/sdk/game/campaign/click`,params);
   }
 
   //querying campaign information
